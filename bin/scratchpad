@@ -1,0 +1,10 @@
+#! /bin/bash
+
+desktop="INVIS$1"
+current=`bspc query -D -d focused`
+
+if [[ $desktop == $current ]]; then
+    bspc desktop -f last
+else
+    bspc desktop -f $desktop
+fi

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+BAT=`acpi -b | awk '{gsub(/%,/,""); print $4}' | sed 's/%//g'`
+STATUS=`acpi -b | awk '{gsub(/,/,""); print $3}'`
+REMAINING=`acpi -b | awk '{gsub(/,/,""); print $5}'`
+
+echo -n "$STATUS: $BAT $REMAINING"

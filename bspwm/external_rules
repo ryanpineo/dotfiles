@@ -1,0 +1,17 @@
+#!/bin/bash
+
+wid=$1
+class=$2
+instance=$3
+
+echo "WID: $wid CLASS: $class INSTANCE: $instance" >> /tmp/extern.log
+
+# Chrome notification popup window
+if [ -z "$class" -a -z "$instance" ]; then
+    echo "state=floating"
+fi
+
+# Pushbullet text message reply
+if [ "$class" = "Chrome" ] && [[ "$instance" =~ crx_ ]]; then
+    echo "state=floating"
+fi

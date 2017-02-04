@@ -1,0 +1,4 @@
+/vim/tmp
+/vim/plugged/*
+/vim/.netrwhist
+/tmux/plugins/*

@@ -1,0 +1,12 @@
+#! /bin/sh
+
+sleep 1
+wmname LG3D &  # Fix java graphics bug
+dunst &
+
+xcape -t 300 &
+stalonetray &
+cmst &
+tresorit &
+nylas &
+discord-canary &

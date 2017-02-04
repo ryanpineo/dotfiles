@@ -1,0 +1,6 @@
+#!/bin/bash
+.git/hooks/ctags >/dev/null 2>&1 &
+
+if [[ "$(pwd)" =~ /tsl/ ]]; then
+    git config user.email ry@tsl.io
+fi

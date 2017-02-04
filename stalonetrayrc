@@ -1,0 +1,10 @@
+background "#34322E"
+window_layer top
+window_strut top
+
+sticky true
+geometry 8x1-0+0
+grow_gravity W
+icon_gravity SE
+icon_size 20
+kludges force_icons_size

@@ -1,0 +1,2 @@
+#!/bin/bash
+primusrun /usr/share/playonlinux/playonlinux --run "League of Legends"

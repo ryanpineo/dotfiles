@@ -1,0 +1,39 @@
+#!/bin/bash
+
+bspc config border_width 2
+bspc config window_gap 4
+bspc config focus_follows_pointer true
+
+bspc config remove_disabled_monitors true
+bspc config remove_unplugged_monitors true
+
+bspc config split_ratio 0.50
+bspc config pointer_modifier mod1  # alt
+
+bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -a INVISemail INVISkeepassx INVISzeal
+
+# Startup Shits
+~/.bspwm/panel/panel &
+~/.bspwm/startup &
+sxhkd -c ~/.sxhkd/sxhkdrc &
+
+# Rules
+bspc rule -a Thunderbird desktop=INVISemail
+bspc rule -a geary desktop=INVISemail
+bspc rule -a postbox.exe desktop=INVISemail
+bspc rule -a Msgcompose state=floating
+bspc rule -a zeal desktop=INVISzeal
+bspc rule -a keepassx desktop=INVISkeepassx
+bspc rule -a keepass2 desktop=INVISkeepassx
+bspc rule -a Skype desktop=^2
+bspc rule -a VirtualBox state=floating
+bspc rule -a SpiderOak state=floating
+bspc rule -a TeamViewer.exe state=floating
+bspc rule -a "Nylas N1" desktop=INVISemail state=floating
+bspc rule -a "*:Battle.net.exe" state=floating
+bspc rule -a "discord" desktop=^6
+bspc rule -a "Slack" desktop=^2
+bspc rule -a "Tresorit" state=floating
+
+bspc config external_rules_command ~/.bspwm/external_rules

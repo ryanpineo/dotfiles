@@ -1,0 +1,2 @@
+#!/bin/bash
+primusrun java -jar ~/.minecraft/Minecraft.jar

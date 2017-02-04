@@ -1,0 +1,6 @@
+# vim: set noexpandtab:
+super + {_, shift + }{1-9,0}
+	bspc {desktop -f, window -d} ^{1-9,10}
+
+super + g
+    killall sxhkd; sxhkd -c ~/.sxhkd/sxhkdrc

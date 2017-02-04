@@ -1,0 +1,92 @@
+# vim: set noexpandtab:
+
+# Close window
+alt + shift + x
+	bspc node -c
+
+# Kill window
+alt + shift + q
+	bspc node -k
+
+# Presel window for splitting
+alt + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# Toggle floating or fullscreen mode
+alt + {_,shift +,ctrl +} t
+	bspc node -t {~floating,~fullscreen,tiled}
+
+# Select or move window to desktop
+alt + {_, shift + }{1-9,0}
+	bspc {desktop -f, node -d} ^{1-9,10}
+
+# Select or move window
+alt + {_, shift +}{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# Mirror and flip leaves of tree
+alt + {comma,period}
+	bspc desktop -F {horizontal,vertical}
+
+# Rotate leaves of tree
+alt + shift + {comma,period}
+	bspc desktop -R {90,270}
+
+# Move current window to largest space
+alt + Return
+	bspc node -s biggest
+
+# Go to last desktop
+alt + Tab
+	bspc desktop -f last
+
+# Applications
+alt + shift + Return
+	termite -c ~/.termiterc
+
+# Dmenu with history
+alt + space
+	dmenu_run
+
+super + e
+	scratchpad email
+
+super shift + p
+	scratchpad keepassx
+
+super + p
+	passmenu
+
+super + k
+	scratchpad zeal
+
+# Switch to gaming config
+super + g
+	killall sxhkd; sxhkd -c /home/ryan/.sxhkd/gamingrc
+
+# Lock the screen
+super + l
+	/home/ryan/bin/lock.sh
+
+# Special Keys
+Print
+	imgur-screenshot -f
+
+alt + Print
+	imgur-screenshot
+
+super + Print
+	scrot -q 100
+
+super + alt + Print
+	scrot -q 100 -s
+
+
+XF86AudioMute
+	/usr/bin/pulseaudio-ctl mute
+
+XF86AudioLowerVolume
+	/usr/bin/pulseaudio-ctl down
+
+XF86AudioRaiseVolume
+	/usr/bin/pulseaudio-ctl up

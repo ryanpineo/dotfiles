@@ -1,0 +1,28 @@
+remove Lock = Caps_Lock
+keysym Caps_Lock = Control_L
+add Control = Control_L
+
+! Use the right shift key!!
+! keysym Shift_R = Mode_switch
+
+! keysym q = q 0x3571 Q q
+! keysym a = a 0x3571 A a
+! keysym z = z 0x3571 Z z
+! keysym w = w 0x3571 W w
+! keysym s = s 0x3571 S s
+! keysym x = x 0x3571 X x
+! keysym e = e 0x3571 E e
+! keysym d = d 0x3571 D d
+! keysym c = c 0x3571 C c
+! keysym r = r 0x3571 R r
+! keysym f = f 0x3571 F f
+! keysym v = v 0x3571 V v
+! keysym t = t 0x3571 T t
+! keysym g = g 0x3571 G g
+
+! keysym 1 = 1 0x3571 exclam 1
+! keysym 2 = 2 0x3571 at 2
+! keysym 3 = 3 0x3571 numbersign 3
+! keysym 4 = 4 0x3571 dollar 4
+! keysym 5 = 5 0x3571 percent 5
+! keysym 6 = 6 0x3571 asciicircum 6

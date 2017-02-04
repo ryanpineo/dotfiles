@@ -1,0 +1,112 @@
+#!/bin/zsh
+# Env setup. Done here instead of .zshenv because /etc/profile overwrites stuff
+
+# By default, zsh considers many characters part of a word (e.g., _ and -).
+# Narrow that down to allow easier skipping through words via M-f and M-b.
+export WORDCHARS='*?[]~&;!$%^<>'
+
+export PATH=$PATH:~/bin
+export PATH=$PATH:~/.tmuxifier/bin
+export PATH=$PATH:~/.gem/ruby/2.2.0/bin
+
+export EDITOR=vim
+export MANPAGER=less
+export BROWSER=chrome
+
+export WORKON_HOME=$HOME/.venvs
+export PROJECT_HOME=$HOME/projects
+export VIRTUALENVWRAPPER_PROJECT_FILENAME=.venv
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+source /usr/bin/virtualenvwrapper_lazy.sh
+
+# tmux
+export TMUXIFIER_LAYOUT_PATH=~/.tmuxifier_layouts
+
+# bspwm
+export PANEL_FIFO=/tmp/panel-fifo
+export PANEL_HEIGHT=24
+export PANEL_FONT_FAMILY="-*-terminus-medium-r-normal-*-12-*-*-*-c-*-*-1"
+export BSPWM_SOCKET=/tmp/bspwm-socket
+export SXHKD_SHELL=/bin/bash
+
+# FZF
+export FZF_DEFAULT_COMMAND='ag -l -g ""'
+export FZF_DEFAULT_OPTS='--color light'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+
+unset GREP_OPTIONS
+
+# Plugins
+source /usr/share/zsh/scripts/antigen/antigen.zsh
+antigen bundle lukechilds/zsh-nvm
+
+eval "$(tmuxifier init -)"
+eval "$(fasd --init posix-alias zsh-hook)"
+eval "$(dircolors ~/.dir_colors/dircolors.ansi-light)"
+
+# Auto completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
+autoload -U compinit
+compinit
+
+# Prompt
+autoload -U promptinit colors && promptinit && colors
+setopt promptsubst
+source ~/.zsh_themes/ryan.zsh-theme
+
+# History
+HISTFILE=~/.zsh_history
+SAVEHIST=20000
+HISTSIZE=20000
+setopt extended_history
+setopt inc_append_history
+
+# Use emacs key bindings.
+bindkey -e
+
+# Edit current line
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+
+# Filter based on what is already typed.
+# bindkey "^P" history-beginning-search-backward
+# bindkey "^N" history-beginning-search-forward
+bindkey "^P" up-line-or-search
+bindkey "^N" down-line-or-search
+
+# Automaticly activate virtualenvs
+auto_venv() {
+    if [ -e .venv ]; then
+        if [ "$(cat .venv)" != "$(basename "$VIRTUAL_ENV")" ]; then
+            workon "$(cat .venv)"
+        fi
+    fi
+}
+add-zsh-hook chpwd auto_venv
+
+# Ruby
+export rvm_ignore_gemrc_issues=1
+export PATH="$PATH:$HOME/.rvm/bin"
+
+alias ls="ls --color=auto"
+alias tmux="tmux -2"
+alias ssh='TERM=xterm ssh'  # Nobody knows about poor termite...
+alias pac='pacaur'
+
+alias at="tmux attach -t "
+alias load="tmuxifier load-session "
+alias v='f -e vim'
+alias c='fasd_cd -d'
+
+alias sc-start="sudo systemctl start"
+alias sc-restart="sudo systemctl restart"
+alias sc-stop="sudo systemctl stop"
+alias sc-enable="sudo systemctl enable"
+alias sc-disable="sudo systemctl disable"
+
+alias http="http --style=solarized"
