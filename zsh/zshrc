@@ -23,9 +23,6 @@ export TMUXIFIER_LAYOUT_PATH=~/.tmux/layouts
 eval "$(tmuxifier init -)"
 
 # bspwm
-export PANEL_FIFO=/tmp/panel-fifo
-export PANEL_HEIGHT=24
-export PANEL_FONT_FAMILY="-*-terminus-medium-r-normal-*-12-*-*-*-c-*-*-1"
 export BSPWM_SOCKET=/tmp/bspwm-socket
 export SXHKD_SHELL=/bin/bash
 
