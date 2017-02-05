@@ -20,7 +20,7 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 source /usr/bin/virtualenvwrapper_lazy.sh
 
 # tmux
-export TMUXIFIER_LAYOUT_PATH=~/.tmuxifier_layouts
+export TMUXIFIER_LAYOUT_PATH=~/.tmux/layouts
 
 # bspwm
 export PANEL_FIFO=/tmp/panel-fifo
