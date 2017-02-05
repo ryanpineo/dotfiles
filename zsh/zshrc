@@ -7,7 +7,6 @@ export WORDCHARS='*?[]~&;!$%^<>'
 
 export PATH=$PATH:~/bin
 export PATH=$PATH:~/.tmuxifier/bin
-export PATH=$PATH:~/.gem/ruby/2.2.0/bin
 
 export EDITOR=vim
 export MANPAGER=less
@@ -21,6 +20,7 @@ source /usr/bin/virtualenvwrapper_lazy.sh
 
 # tmux
 export TMUXIFIER_LAYOUT_PATH=~/.tmux/layouts
+eval "$(tmuxifier init -)"
 
 # bspwm
 export PANEL_FIFO=/tmp/panel-fifo
@@ -42,7 +42,6 @@ unset GREP_OPTIONS
 source /usr/share/zsh/scripts/antigen/antigen.zsh
 antigen bundle lukechilds/zsh-nvm
 
-eval "$(tmuxifier init -)"
 eval "$(fasd --init posix-alias zsh-hook)"
 eval "$(dircolors ~/.dir_colors/dircolors.ansi-light)"
 
