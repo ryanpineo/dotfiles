@@ -76,6 +76,10 @@ let g:user_emmet_leader_key='<c-e>'
 " FZF
 nnoremap <leader>f :FZF!<cr>
 
+" INSTANT MARKDOWN
+let g:instant_markdown_slow = 1
+let g:instant_markdown_autostart = 0
+
 " JEDI
 let g:jedi#popup_on_dot=0
 let g:jedi#popup_select_first=0

@@ -47,6 +47,9 @@ Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
+" Markdown
+Plug 'suan/vim-instant-markdown'
+
 " Python
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }  " python autocompletion
 Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
