@@ -22,6 +22,9 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 # Launch top bar
 polybar top &
 
+# Set background
+feh --bg-fill "~/pictures/wallpapers/revisions.png"
+
 # Startup Shits
 ~/.bspwm/startup &
 sxhkd -c ~/.sxhkd/sxhkdrc &
