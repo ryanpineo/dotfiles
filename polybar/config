@@ -34,7 +34,7 @@ module-margin-left = 1
 module-margin-right = 2
 modules-left = bspwm
 modules-center = title
-modules-right = volume battery date
+modules-right = volume battery ram date
 
 tray-position = right
 tray-padding = 2
@@ -105,6 +105,12 @@ full-at = 96
 label-charging = 🔌 %percentage%% %time%
 label-discharging = 🔋 %percentage%% %time%
 label-full = 🔌 Full
+
+[module/ram]
+type = internal/memory
+format = <label>
+label = 🐏 %gb_used%
+
 
 [settings]
 screenchange-reload = true
