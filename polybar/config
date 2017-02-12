@@ -84,6 +84,7 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 label = %date% %time%
+format = 🕓 <label>
 
 [module/volume]
 type = internal/volume
