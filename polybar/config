@@ -77,7 +77,7 @@ label-maxlen = 70
 type = internal/date
 interval = 5
 
-date = "%b %d"
+date = "%a %b %d"
 date-alt = " %Y-%m-%d"
 
 time = %H:%M
