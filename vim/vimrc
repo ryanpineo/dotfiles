@@ -64,7 +64,7 @@ colorscheme solarized
 " make searches case sensitive only if they contain upper-case characters
 set ignorecase smartcase
 set incsearch
-set grepprg=ag\ --vimgrep
+set grepprg=rg\ --vimgrep\ --smart-case
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
