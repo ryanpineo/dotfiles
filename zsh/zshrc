@@ -31,6 +31,10 @@ export FZF_DEFAULT_COMMAND='ag -l -g ""'
 export FZF_DEFAULT_OPTS='--color light'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# FASD
+export _FASD_MAX=5000
+eval "$(fasd --init posix-alias zsh-hook)"
+
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 
 unset GREP_OPTIONS
@@ -39,7 +43,6 @@ unset GREP_OPTIONS
 source /usr/share/zsh/scripts/antigen/antigen.zsh
 antigen bundle lukechilds/zsh-nvm
 
-eval "$(fasd --init posix-alias zsh-hook)"
 eval "$(dircolors ~/.dir_colors/dircolors.ansi-light)"
 
 # Auto completion

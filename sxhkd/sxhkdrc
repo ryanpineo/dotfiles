@@ -44,9 +44,9 @@ alt + Tab
 alt + shift + Return
 	termite -c ~/.termiterc
 
-# Dmenu with history
+# Program runner
 alt + space
-	dmenu_run
+	rofi -show run -matching fuzzy
 
 super + e
 	scratchpad email
