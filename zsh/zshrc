@@ -40,7 +40,7 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 unset GREP_OPTIONS
 
 # Plugins
-source /usr/share/zsh/scripts/antigen/antigen.zsh
+source /usr/share/zsh/share/antigen.zsh
 antigen bundle lukechilds/zsh-nvm
 
 eval "$(dircolors ~/.dir_colors/dircolors.ansi-light)"
