@@ -99,9 +99,9 @@ label-muted = 🔇%percentage%%
 
 [module/battery]
 type = internal/battery
-battery = BAT1
-adapter = ADP1
-full-at = 96
+battery = BAT0
+adapter = ADP0
+full-at = 100
 
 label-charging = 🔌 %percentage%% %time%
 label-discharging = 🔋 %percentage%% %time%
