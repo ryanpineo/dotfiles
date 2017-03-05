@@ -27,8 +27,7 @@ export BSPWM_SOCKET=/tmp/bspwm-socket
 export SXHKD_SHELL=/bin/bash
 
 # FZF
-export FZF_DEFAULT_COMMAND='ag -l -g ""'
-export FZF_DEFAULT_OPTS='--color light'
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # FASD
