@@ -90,3 +90,9 @@ XF86AudioLowerVolume
 
 XF86AudioRaiseVolume
 	/usr/bin/pulseaudio-ctl up
+
+XF86MonBrightnessDown
+	xbacklight -dec 10
+
+XF86MonBrightnessUp
+	xbacklight -inc 10
