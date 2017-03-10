@@ -40,6 +40,7 @@ unset GREP_OPTIONS
 
 # Plugins
 source /usr/share/zsh/share/antigen.zsh
+export NVM_LAZY_LOAD=true
 antigen bundle lukechilds/zsh-nvm
 
 eval "$(dircolors ~/.dir_colors/dircolors.ansi-light)"
@@ -76,16 +77,6 @@ bindkey "^X^E" edit-command-line
 # bindkey "^N" history-beginning-search-forward
 bindkey "^P" up-line-or-search
 bindkey "^N" down-line-or-search
-
-# Automaticly activate virtualenvs
-auto_venv() {
-    if [ -e .venv ]; then
-        if [ "$(cat .venv)" != "$(basename "$VIRTUAL_ENV")" ]; then
-            workon "$(cat .venv)"
-        fi
-    fi
-}
-add-zsh-hook chpwd auto_venv
 
 # Ruby
 export rvm_ignore_gemrc_issues=1
