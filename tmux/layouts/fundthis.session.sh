@@ -8,7 +8,7 @@ if initialize_session "fundthis"; then
 
   new_window "back"
   run_cmd "cd ft-backend-django"
-  run_cmd "workon fundthis-perks-api"
+  run_cmd "workon fundthis-api"
 
   new_window "apidocs"
   run_cmd "cd ft-backend-django/apidocs"
