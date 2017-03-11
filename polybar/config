@@ -100,7 +100,7 @@ label-muted = 🔇%percentage%%
 [module/battery]
 type = internal/battery
 battery = BAT0
-adapter = ADP0
+adapter = AC
 full-at = 100
 
 label-charging = 🔌 %percentage%% %time%
