@@ -39,6 +39,9 @@ Plug 'chase/vim-ansible-yaml'
 " CoffeeScript
 Plug 'kchmck/vim-coffee-script'
 
+" Elixir
+Plug 'elixir-lang/vim-elixir'
+
 " HTML
 Plug 'mattn/emmet-vim'
 Plug 'othree/html5.vim'

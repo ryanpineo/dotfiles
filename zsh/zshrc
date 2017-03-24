@@ -1,25 +1,28 @@
-#!/bin/zsh
 # Env setup. Done here instead of .zshenv because /etc/profile overwrites stuff
 
 # By default, zsh considers many characters part of a word (e.g., _ and -).
 # Narrow that down to allow easier skipping through words via M-f and M-b.
 export WORDCHARS='*?[]~&;!$%^<>'
 
-export PATH=$PATH:~/bin
-export PATH=$PATH:~/.tmuxifier/bin
-
+export PATH=~/bin:$PATH
 export EDITOR=vim
 export MANPAGER=less
 export BROWSER=chrome
 
+# Python
 export WORKON_HOME=$HOME/.venvs
 export PROJECT_HOME=$HOME/projects
 export VIRTUALENVWRAPPER_PROJECT_FILENAME=.venv
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 source /usr/bin/virtualenvwrapper_lazy.sh
 
+# Ruby
+export rvm_ignore_gemrc_issues=1
+export PATH="$PATH:$HOME/.rvm/bin"
+
 # tmux
 export TMUXIFIER_LAYOUT_PATH=~/.tmux/layouts
+export PATH=$PATH:~/.tmuxifier/bin
 eval "$(tmuxifier init -)"
 
 # bspwm
@@ -27,14 +30,12 @@ export BSPWM_SOCKET=/tmp/bspwm-socket
 export SXHKD_SHELL=/bin/bash
 
 # FZF
-export FZF_DEFAULT_COMMAND='rg --files --hidden'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/"'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # FASD
 export _FASD_MAX=5000
 eval "$(fasd --init posix-alias zsh-hook)"
-
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 
 unset GREP_OPTIONS
 
@@ -73,14 +74,8 @@ zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 
 # Filter based on what is already typed.
-# bindkey "^P" history-beginning-search-backward
-# bindkey "^N" history-beginning-search-forward
 bindkey "^P" up-line-or-search
 bindkey "^N" down-line-or-search
-
-# Ruby
-export rvm_ignore_gemrc_issues=1
-export PATH="$PATH:$HOME/.rvm/bin"
 
 alias ls="ls --color=auto"
 alias tmux="tmux -2"
