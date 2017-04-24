@@ -4,6 +4,7 @@ bspc config border_width 2
 bspc config window_gap 4
 bspc config focus_follows_pointer true
 
+bspc config merge_overlapping_monitors true
 bspc config remove_disabled_monitors true
 bspc config remove_unplugged_monitors true
 
@@ -27,14 +28,13 @@ polybar top &
 sxhkd -c ~/.sxhkd/sxhkdrc &
 
 # Rules
-bspc rule -a Msgcompose state=floating
-bspc rule -a Skype desktop=^2
-bspc rule -a VirtualBox state=floating
-bspc rule -a TeamViewer.exe state=floating
-bspc rule -a "Nylas N1" desktop=INVISemail state=floating
+bspc rule -a "Tresorit" state=floating
+bspc rule -a "SpiderOakONE" state=floating
+bspc rule -a "TeamViewer.exe" state=floating
 bspc rule -a "*:Battle.net.exe" state=floating
+bspc rule -a "*:postbox.exe" desktop=INVISemail
+bspc rule -a "Nylas Mail" desktop=INVISemail
 bspc rule -a "discord" desktop=^6
 bspc rule -a "Slack" desktop=^2
-bspc rule -a "Tresorit" state=floating
 
 bspc config external_rules_command ~/.bspwm/external_rules
