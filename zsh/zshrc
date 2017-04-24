@@ -7,7 +7,7 @@ export WORDCHARS='*?[]~&;!$%^<>'
 export PATH=~/bin:$PATH
 export EDITOR=vim
 export MANPAGER=less
-export BROWSER=chrome
+export BROWSER=google-chrome-stable
 
 # Python
 export WORKON_HOME=$HOME/.venvs
@@ -40,9 +40,8 @@ eval "$(fasd --init posix-alias zsh-hook)"
 unset GREP_OPTIONS
 
 # Plugins
-source /usr/share/zsh/share/antigen.zsh
 export NVM_LAZY_LOAD=true
-antigen bundle lukechilds/zsh-nvm
+antibody bundle lukechilds/zsh-nvm
 
 eval "$(dircolors ~/.dir_colors/dircolors.ansi-light)"
 
