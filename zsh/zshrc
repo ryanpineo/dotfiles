@@ -1,5 +1,8 @@
 # Env setup. Done here instead of .zshenv because /etc/profile overwrites stuff
 
+# Use emacs key bindings.
+bindkey -e
+
 # By default, zsh considers many characters part of a word (e.g., _ and -).
 # Narrow that down to allow easier skipping through words via M-f and M-b.
 export WORDCHARS='*?[]~&;!$%^<>'
@@ -40,6 +43,7 @@ eval "$(fasd --init posix-alias zsh-hook)"
 unset GREP_OPTIONS
 
 # Plugins
+source <(antibody init)
 export NVM_LAZY_LOAD=true
 antibody bundle lukechilds/zsh-nvm
 
@@ -63,9 +67,6 @@ SAVEHIST=20000
 HISTSIZE=20000
 setopt extended_history
 setopt inc_append_history
-
-# Use emacs key bindings.
-bindkey -e
 
 # Edit current line
 autoload -z edit-command-line
