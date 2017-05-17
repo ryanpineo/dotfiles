@@ -14,7 +14,6 @@ if initialize_session "alf"; then
   run_cmd "workon alf-api"
   select_pane 3
   run_cmd "cd alf-angular"
-  run_cmd "nvm use 6"
   run_cmd "grunt"
 
   new_window "back"

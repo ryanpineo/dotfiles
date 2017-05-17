@@ -4,7 +4,8 @@ session_root "~/projects/tsl/clients/vupulse"
 # argument is given, session name will be based on layout file name.
 if initialize_session "vupulse"; then
   new_window "vagrant"
-  run_cmd "cd vup-ansible2"
+  run_cmd "cd vup-ansible"
+  run_cmd "workon ansible2.2"
 
   new_window "back"
   run_cmd "cd vup-backend-django"
