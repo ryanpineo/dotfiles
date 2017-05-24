@@ -5,7 +5,8 @@ wmname LG3D &  # Fix java graphics bug
 dunst &
 
 xcape -t 300 &
-cmst &
-SpiderOakONE &
+nm-applet &
+sleep 2
 tresorit &
-nylas-mail &
+SpiderOakONE &
+thunderbird &

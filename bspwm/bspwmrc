@@ -34,6 +34,8 @@ bspc rule -a "TeamViewer.exe" state=floating
 bspc rule -a "*:Battle.net.exe" state=floating
 bspc rule -a "*:postbox.exe" desktop=INVISemail
 bspc rule -a "Nylas Mail" desktop=INVISemail
+bspc rule -a 'Thunderbird:Mail' desktop=INVISemail
+bspc rule -a 'Thunderbird:Msgcompose' state=floating
 bspc rule -a "discord" desktop=^6
 bspc rule -a "Slack" desktop=^2
 
