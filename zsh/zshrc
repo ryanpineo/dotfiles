@@ -8,7 +8,7 @@ bindkey -e
 export WORDCHARS='*?[]~&;!$%^<>'
 
 export PATH=~/bin:$PATH
-export EDITOR=vim
+export EDITOR=nvim
 export MANPAGER=less
 export BROWSER=google-chrome-stable
 
@@ -84,8 +84,9 @@ alias pac='pacaur'
 
 alias at="tmux attach -t "
 alias load="tmuxifier load-session "
-alias v='f -e vim'
+alias v='f -e nvim'
 alias c='fasd_cd -d'
+alias vim=nvim
 
 alias sc-start="sudo systemctl start"
 alias sc-restart="sudo systemctl restart"
