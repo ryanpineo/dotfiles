@@ -80,7 +80,6 @@ bindkey "^N" down-line-or-search
 alias ls="ls --color=auto"
 alias tmux="tmux -2"
 alias ssh='TERM=xterm ssh'  # Nobody knows about poor termite...
-alias pac='pacaur'
 
 alias at="tmux attach -t "
 alias load="tmuxifier load-session "
