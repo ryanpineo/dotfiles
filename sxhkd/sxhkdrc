@@ -70,17 +70,10 @@ super + l
 
 # Special Keys
 Print
-	imgur-screenshot -f
+	flameshot gui
 
-alt + Print
-	imgur-screenshot
-
-super + Print
-	scrot -q 100
-
-super + alt + Print
-	scrot -q 100 -s
-
+Pause
+	flameshot gui
 
 XF86AudioMute
 	/usr/bin/pulseaudio-ctl mute
