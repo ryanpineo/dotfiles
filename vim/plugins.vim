@@ -4,6 +4,10 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
+" helpers
+Plug 'google/vim-maktaba'
+Plug 'google/vim-glaive'
+
 " To the pope mobile!
 Plug 'tpope/vim-fugitive'       " git wrapper
 Plug 'tpope/vim-surround'       " surround text objects with characters
@@ -30,8 +34,11 @@ Plug 'Konfekt/FastFold'
 Plug 'SirVer/ultisnips'
 Plug 'git@github.com:RyanPineo/vim-snippets.git'
 
-" support .editorconfig
+" Formatting
 Plug 'editorconfig/editorconfig-vim'
+Plug 'google/vim-codefmt'
+
+" Languages
 
 " Ansible
 Plug 'chase/vim-ansible-yaml'
@@ -41,6 +48,9 @@ Plug 'kchmck/vim-coffee-script'
 
 " Elixir
 Plug 'elixir-lang/vim-elixir'
+
+" Go
+Plug 'fatih/vim-go'
 
 " HTML
 Plug 'mattn/emmet-vim'
@@ -58,6 +68,12 @@ Plug 'davidhalter/jedi-vim', { 'for': 'python' }  " python autocompletion
 Plug 'jmcantrell/vim-virtualenv', { 'for': 'python' }
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }  " better indents
 
+" Swift
+Plug 'keith/swift.vim'
+
+" Terraform
+Plug 'hashivim/vim-terraform'
+
 " Typescript
 Plug 'leafgarland/typescript-vim'  " better syntax
 "Plug 'Quramy/tsuquyomi' " omni completion
@@ -66,3 +82,4 @@ Plug 'leafgarland/typescript-vim'  " better syntax
 Plug 'stephpy/vim-yaml'
 
 call plug#end()
+call glaive#Install()
