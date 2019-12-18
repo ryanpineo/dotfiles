@@ -10,7 +10,14 @@ export WORDCHARS='*?[]~&;!$%^<>'
 export PATH=~/bin:$PATH
 export EDITOR=nvim
 export MANPAGER=less
-export BROWSER=google-chrome-stable
+export BROWSER=chromium
+
+# Android
+export ANDROID_HOME="$HOME/.android/sdk"
+export ANDROID_NDK_HOME="$HOME/.android/sdk/ndk-bundle"
+
+# NodeJS
+export PATH="$HOME/.yarn/bin:$PATH"
 
 # Python
 export WORKON_HOME=$HOME/.venvs
@@ -18,6 +25,7 @@ export PROJECT_HOME=$HOME/projects
 export VIRTUALENVWRAPPER_PROJECT_FILENAME=.venv
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 source /usr/bin/virtualenvwrapper_lazy.sh
+eval "$(pyenv init -)"
 
 # Ruby
 export rvm_ignore_gemrc_issues=1
@@ -48,6 +56,7 @@ export NVM_LAZY_LOAD=true
 antibody bundle lukechilds/zsh-nvm
 
 eval "$(dircolors ~/.dir_colors/dircolors.ansi-light)"
+eval $(keychain --eval --quiet id_rsa id_tsl)
 
 # Auto completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
