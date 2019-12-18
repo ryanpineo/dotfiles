@@ -1,8 +1,8 @@
 [options]
 clickable_url = true
-browser = google-chrome-stable
+browser = chromium
 scrollback_lines = 10000
-font = Source Code Pro 8
+font = Source Code Pro 10
 
 [colors]
 foreground = #657b83
