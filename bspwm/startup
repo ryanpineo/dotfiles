@@ -7,6 +7,5 @@ dunst &
 xcape -t 300 &
 nm-applet &
 sleep 2
-tresorit &
 SpiderOakONE &
-thunderbird &
+mailspring &
