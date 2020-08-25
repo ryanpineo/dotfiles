@@ -7,10 +7,10 @@ bindkey -e
 # Narrow that down to allow easier skipping through words via M-f and M-b.
 export WORDCHARS='*?[]~&;!$%^<>'
 
-export PATH=~/bin:$PATH
+export PATH=~/bin:~/projects/tsl/internal/tsl-scripts:$PATH
 export EDITOR=nvim
 export MANPAGER=less
-export BROWSER=chromium
+export BROWSER=google-chrome-stable
 
 # Android
 export ANDROID_HOME="$HOME/.android/sdk"
@@ -51,9 +51,8 @@ eval "$(fasd --init posix-alias zsh-hook)"
 unset GREP_OPTIONS
 
 # Plugins
-source <(antibody init)
 export NVM_LAZY_LOAD=true
-antibody bundle lukechilds/zsh-nvm
+source ~/.zsh_plugins.sh
 
 eval "$(dircolors ~/.dir_colors/dircolors.ansi-light)"
 eval $(keychain --eval --quiet id_rsa id_tsl)
