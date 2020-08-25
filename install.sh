@@ -18,6 +18,7 @@ function install() {
     ln -sF "$src" "$dest"
 }
 
+install "$dots/autorandr" "$HOME/.config/autorandr"
 install "$dots/bin" "$HOME/bin"
 install "$dots/bspwm" "$HOME/.bspwm"
 install "$dots/ctags" "$HOME/.ctags"

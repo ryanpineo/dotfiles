@@ -1,0 +1,5 @@
+#!/bin/bash
+bspc config -m eDP1 top_padding 27 || true
+bspc config -m DP1-2 top_padding 27 || true
+feh --bg-fill ~/pictures/wallpapers/revisions.png
+xmodmap ~/.xmodmap
