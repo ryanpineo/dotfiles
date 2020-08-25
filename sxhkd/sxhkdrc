@@ -48,17 +48,11 @@ alt + shift + Return
 alt + space
 	rofi -show run -matching fuzzy
 
+super + a
+	scratchpad audio
+
 super + e
 	scratchpad email
-
-super shift + p
-	scratchpad keepassx
-
-super + p
-	passmenu
-
-super + k
-	scratchpad zeal
 
 # Switch to gaming config
 super + g

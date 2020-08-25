@@ -6,6 +6,7 @@ dunst &
 
 xcape -t 300 &
 nm-applet &
-sleep 2
 SpiderOakONE &
 mailspring &
+pavucontrol &
+pulseeffects &

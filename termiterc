@@ -1,6 +1,6 @@
 [options]
 clickable_url = true
-browser = chromium
+browser = google-chrome-stable
 scrollback_lines = 10000
 font = Source Code Pro 10
 
