@@ -1,4 +1,5 @@
 # Env setup. Done here instead of .zshenv because /etc/profile overwrites stuff
+export AML_HOME=/home/ryan/projects/aml/atm/scripts
 
 # Use emacs key bindings.
 bindkey -e
@@ -28,8 +29,8 @@ source /usr/bin/virtualenvwrapper_lazy.sh
 eval "$(pyenv init -)"
 
 # Ruby
-export rvm_ignore_gemrc_issues=1
-export PATH="$PATH:$HOME/.rvm/bin"
+# export rvm_ignore_gemrc_issues=1
+# export PATH="$PATH:$HOME/.rvm/bin"
 
 # tmux
 export TMUXIFIER_LAYOUT_PATH=~/.tmux/layouts
