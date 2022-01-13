@@ -1,0 +1,68 @@
+#!/bin/bash
+
+VERSION=0.0.1
+SOURCE=${1:-master}
+DESTINATION="production"
+
+which jq > /dev/null 2> /dev/null
+if [ $? -gt 0 ]; then
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        # Mac OSX
+        echo "missing required script "jq"; Installing using homebrew..."
+        brew install jq
+        if [ $? -gt 0 ]; then
+            echo "Error installing jq. Please install jq manually https://stedolan.github.io/jq/"
+            exit;
+        fi
+    else
+        echo "missing required script "jq"; Please install jq https://stedolan.github.io/jq/"
+        exit
+    fi
+fi
+
+# Sync code
+git checkout master
+git pull
+git rev-parse "$SOURCE" > /dev/null 2> /dev/null
+if [ $? -gt 0 ]; then
+    echo "Deploy source $SOURCE not found, maybe a typo?"
+    exit;
+fi
+git checkout $SOURCE
+git pull
+git checkout $DESTINATION
+git pull
+
+defaultDeployTarget="$(git rev-parse $SOURCE)"
+possibleChanges="$(git log $DESTINATION..$SOURCE)"
+if [ -z "$possibleChanges" ]; then
+    echo "$DESTINATION is already up to date, no changes to deploy"
+    exit
+fi
+git log $DESTINATION..$SOURCE
+read -p "Deploy target ($defaultDeployTarget): " deployTarget
+if [ -z "$deployTarget" ]; then
+    deployTarget="$defaultDeployTarget"
+fi
+
+git rev-parse "$deployTarget" > /dev/null 2> /dev/null
+if [ $? -gt 0 ]; then
+    echo "Invalid deploy target"
+    exit;
+fi
+git merge "$deployTarget" --no-edit --log
+
+currentYear="$(date +%Y)"
+previousRelease="$(git tag -l --sort=-v:refname | head -1)"
+previousReleaseThisYear="$(echo $previousRelease | grep $currentYear | head -1)"
+
+if [ -z $previousReleaseThisYear ]; then
+    newRelease="v$currentYear.1"
+else
+    previousReleaseNumber="$(echo $previousReleaseThisYear | cut -c 7-)"
+    newReleaseNumber=$((previousReleaseNumber+1))
+    newRelease="v$currentYear.$newReleaseNumber"
+fi
+
+git tag -a "$newRelease" -m "$newRelease"
+git push --follow-tags origin $DESTINATION
