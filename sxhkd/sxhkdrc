@@ -32,10 +32,6 @@ alt + {comma,period}
 alt + shift + {comma,period}
 	bspc desktop -R {90,270}
 
-# Move current window to largest space
-alt + Return
-	bspc node -s biggest
-
 # Go to last desktop
 alt + Tab
 	bspc desktop -f last
@@ -54,6 +50,9 @@ super + a
 super + e
 	scratchpad email
 
+super + shift + e
+	bspc node -d INVISemail
+
 # Switch to gaming config
 super + g
 	killall sxhkd; sxhkd -c /home/ryan/.sxhkd/gamingrc
@@ -70,13 +69,13 @@ Pause
 	flameshot gui
 
 XF86AudioMute
-	/usr/bin/pulseaudio-ctl mute
+	/usr/bin/pamixer mute
 
 XF86AudioLowerVolume
-	/usr/bin/pulseaudio-ctl down
+	/usr/bin/pamixer -d 5
 
 XF86AudioRaiseVolume
-	/usr/bin/pulseaudio-ctl up
+	/usr/bin/pamixer -i 5
 
 XF86MonBrightnessDown
 	xbacklight -dec 10
