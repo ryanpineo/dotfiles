@@ -1,3 +1,0 @@
-#!/bin/bash
-WINEPREFIX=/home/ryan/.local/share/leagueoflegends wineserver -k
-WINEPREFIX=/home/ryan/.local/share/leagueoflegends primusrun wine ".local/share/leagueoflegends/drive_c/Riot Games/League of Legends/LeagueClient.exe"
