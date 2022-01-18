@@ -8,7 +8,7 @@ bindkey -e
 # Narrow that down to allow easier skipping through words via M-f and M-b.
 export WORDCHARS='*?[]~&;!$%^<>'
 
-export PATH=~/bin:~/projects/tsl/internal/tsl-scripts:$PATH
+export PATH=~/bin:$PATH
 export EDITOR=nvim
 export MANPAGER=less
 export BROWSER=google-chrome-stable
