@@ -56,7 +56,7 @@ export NVM_LAZY_LOAD=true
 source ~/.zsh_plugins.sh
 
 eval "$(dircolors ~/.dir_colors/dircolors.ansi-light)"
-eval $(keychain --eval --quiet id_rsa id_tsl)
+eval $(keychain --eval --quiet id_rsa)
 
 # Auto completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
