@@ -1,4 +1,7 @@
 /vim/tmp
 /vim/plugged/*
 /vim/.netrwhist
+/nvim/tmp
+/nvim/plugged/*
+/nvim/.netrwhist
 /tmux/plugins/*

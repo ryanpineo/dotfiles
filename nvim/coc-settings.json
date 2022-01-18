@@ -1,0 +1,7 @@
+{
+    "python.jediEnabled": false,
+    "python.venvFolders": [".pyenv", ".venvs"],
+    "python.disableInstallationCheck": true,
+    "python.linting.flake8Enabled": false,
+    "python.linting.pylintEnabled": false
+}
