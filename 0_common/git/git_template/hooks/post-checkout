@@ -1,0 +1,9 @@
+#!/bin/bash
+.git/hooks/ctags >/dev/null 2>&1 &
+
+if [[ "$(pwd)" =~ /aml/ ]]; then
+    git config user.email ryan@amlsoftware.com
+fi
+if [[ "$(pwd)" =~ /bitom/ ]]; then
+    git config user.email ryan@bitomlabs.com
+fi

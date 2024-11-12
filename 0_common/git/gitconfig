@@ -1,0 +1,54 @@
+[user]
+	name = Ryan Pineo
+	email = ryanpineo@gmail.com
+[core]
+	autocrlf = false
+	safecrlf = false
+	excludesfile = ~/.gitignore_global
+[alias]
+	st = status
+	ci = commit --verbose
+	co = checkout
+	di = diff
+	dc = diff --cached
+	pu = push -u origin HEAD
+	amend = commit --amend
+	aa = add --all
+	ff = merge --ff-only
+	pullff = pull --ff-only
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	b = branch
+	tagl = tag -l --sort=-v:refname
+
+	head = !git r -1
+	h = !git head
+	hp = "!. ~/.githelpers && show_git_head"
+	r = !GIT_NO_PAGER=1 git l -30
+	ra = !git r --all
+	l = "!. ~/.githelpers && pretty_git_log"
+	la = !git l --all
+[diff]
+	tool = vimdiff
+[push]
+	default = simple
+	followTags = true
+[difftool]
+	prompt = false
+[mergetool "fugitive"]
+	cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+[merge]
+	tool = fugitive
+[github]
+	user = RyanPineo
+[init]
+	templatedir = ~/.git_template
+	defaultBranch = master
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[pull]
+	rebase = false
+[color]
+	ui = auto
