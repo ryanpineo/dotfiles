@@ -1,0 +1,61 @@
+# Env setup. Done here instead of .zshenv because /etc/profile overwrites stuff
+export AML_HOME=/home/ryan/work/bitom/run/
+export KIOSK_HOME=/home/ryan/work/bitom/run/
+
+# Grep
+unset GREP_OPTIONS
+
+# Use emacs key bindings.
+bindkey -e
+
+# By default, zsh considers many characters part of a word (e.g., _ and -).
+# Narrow that down to allow easier skipping through words via M-f and M-b.
+export WORDCHARS='*?[]~&;!$%^<>'
+
+# Python
+export WORKON_HOME="$HOME/.venvs"
+source $HOME/.pyenv/versions/3.11.6/bin/virtualenvwrapper_lazy.sh
+eval "$(pyenv init -)"
+
+# NodeJS
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# FZF
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/"'
+
+# Auto completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
+autoload -U compinit
+compinit
+
+# Prompt
+autoload -U promptinit colors && promptinit && colors
+setopt promptsubst
+source ~/.zsh_themes/ryan.zsh-theme
+
+# History
+HISTFILE=~/.zsh_history
+SAVEHIST=20000
+HISTSIZE=20000
+setopt extended_history
+setopt inc_append_history
+
+# Edit current line
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+
+# Filter based on what is already typed.
+bindkey "^P" up-line-or-search
+bindkey "^N" down-line-or-search
+
+# Aliases
+alias vim=nvim
+alias ls=eza
+alias 7z="7zz"
+alias at="tmux attach -t "
+alias load="tmuxifier load-session "
